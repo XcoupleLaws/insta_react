@@ -9,7 +9,8 @@ export default class Users extends Component {
     state = {
         peoples: [],
         error: false,
-        loading: true,
+        loadingPeoples: true,
+        loadingUser: true,
         user: {},
     }
     
@@ -23,7 +24,8 @@ export default class Users extends Component {
     updateUser = () =>{
         this.InstaService.getUser()
         .then(user=> this.setState({
-            user
+            user,
+            loadingUser: false
         }))
         .catch(this.onError)
     }
@@ -38,9 +40,8 @@ export default class Users extends Component {
         this.setState({
             peoples,
             error: false,
-            loading: false
+            loadingPeoples: false
         })
-        console.log(this.state.peoples);
     }
 
     onError= (error) =>{
@@ -72,12 +73,13 @@ export default class Users extends Component {
     
     
     render(){
-        const {peoples, loading, error, user}= this.state;
+        const {peoples, loadingUser, loadingPeoples, error, user}= this.state;
 
         const items= this.renderComponent(peoples);
 
-        if(loading && !error){
-            return <h1>Loading...</h1>
+        if((loadingUser || loadingPeoples) && !error){
+            // return <h1 style={{color: "rgb(0,0,0,0.1)"}}>loading...</h1>
+            return <div></div>
         }
 
         if(error){

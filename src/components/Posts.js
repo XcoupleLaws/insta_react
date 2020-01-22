@@ -31,6 +31,7 @@ export default class Posts extends Component{
     onError = (error) =>{
         this.setState({
             error: true,
+            loading: false
         })
     }
 
@@ -64,9 +65,10 @@ export default class Posts extends Component{
     render(){
         const {error, posts, loading} = this.state;
         
-        if(loading && !error){
+        if(loading){
             return(
-                <h1>loading...</h1>
+                // return <h1 style={{color: "rgb(0,0,0,0.1)"}}>loading...</h1>
+                <div></div> //smtng
             )
         }
 

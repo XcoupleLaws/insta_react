@@ -8,7 +8,8 @@ class Profile extends Component{
     InstaService= new InstaService();
     state={
         user: {},
-        error: false
+        error: false,
+        loading: true,
     }
 
     updateUser = () =>{
@@ -16,6 +17,7 @@ class Profile extends Component{
         .then(user=>this.setState({
                 user,
                 error: false,
+                loading: false,
             }))
         .catch(error=>this.setState({
             error: true,
@@ -27,7 +29,11 @@ class Profile extends Component{
     }
     
     render(){
-        const {error, user}= this.state;
+        const {error, user, loading}= this.state;
+
+        if(loading){
+            return <div></div>
+        }
 
         if(error){
             return <ErrorMessage/>
