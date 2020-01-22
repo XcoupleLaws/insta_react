@@ -21,8 +21,8 @@
         {
             "name": "petrychenko_ivan",
             "altname": "Ivan",
-            "photo": "https://scontent-arn2-2.cdninstagram.com/vp/9d73bf6b10ad824de2ae7967bdaf3e28/5D6439C8/t51.2885-19/s150x150/32709032_195146804461686_2087604678543015936_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com",
-            "src": "https://scontent-arn2-2.cdninstagram.com/vp/5eaed9d4cff5a383ac4268734ab83db4/5D5EB16E/t51.2885-15/e35/52364169_313103329348388_2352836595513722142_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com",
+            "photo": "https://lvbs.com.ua/wp-content/uploads/2018/09/img_05891.jpg",
+            "src": "https://bipbap.ru/wp-content/uploads/2017/04/leto_derevo_nebo_peyzazh_dom_derevya_domik_priroda_3000x2000.jpg",
             "alt": "Tech photo",
             "descr": "Real photo from instagram",
             "id": "3"
@@ -54,5 +54,12 @@
             "descr": "Hello! If you want to drink some delicious smoothies - just call me!",
             "id": "6"
         }
-    ]
+    ],
+    "user":
+        {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/User_with_smile.svg/600px-User_with_smile.svg.png",
+            "alt": "current_user",
+            "name": "user"
+        }
+    
 }

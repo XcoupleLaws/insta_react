@@ -9,6 +9,7 @@ export default class Posts extends Component{
     state ={
         posts: [],
         error: false,
+        loading: true
     }
 
     
@@ -16,12 +17,14 @@ export default class Posts extends Component{
         this.InstaService.getAllPosts()
         .then(this.onPostsLoaded)
         .catch(this.onError);
+        
     }
 
     onPostsLoaded = (posts) =>{
         this.setState({
             posts,
-            error: false
+            error: false,
+            loading: false
         })
     }
 
@@ -59,7 +62,13 @@ export default class Posts extends Component{
     }
 
     render(){
-        const {error, posts} = this.state;
+        const {error, posts, loading} = this.state;
+        
+        if(loading && !error){
+            return(
+                <h1>loading...</h1>
+            )
+        }
 
         if(error){
             return <ErrorMessage/>
